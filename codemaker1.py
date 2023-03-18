@@ -22,11 +22,9 @@ def init():
     solution = ''.join(random.choices(common.COLORS, k=common.LENGTH))
     return solution
 
-
+#%%QUESTION 2
 def evaluation_complete(solution, combinaison):
-    """
-    Cette fonction n'est pas correcte, elle n'implémente qu'une évaluation partielle
-    """
+  
     if len(solution) != len(combinaison):
         sys.exit("Erreur : les deux combinaisons n'ont pas la même longueur")
         
@@ -45,5 +43,5 @@ def codemaker(combinaison):
 
 solution = ['B','O','M','G']
 
-print(codemaker(['B','B','J','O']))
+#print(codemaker(['B','B','J','O']))
 

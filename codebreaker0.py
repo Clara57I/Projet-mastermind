@@ -22,4 +22,4 @@ def codebreaker(evaluation_p):
     """
     return ''.join(random.choices(common.COLORS, k=common.LENGTH))
 
-print(codebreaker(evaluation_p))
+ #print(codebreaker(evaluation_p))

@@ -2,10 +2,10 @@
 
 import common
 import codemaker1
-import codemaker2
+#import codemaker2
 import codebreaker0
-import codebreaker1
-import codebreaker2
+#import codebreaker1
+#import codebreaker2
 
 import logging
 
@@ -62,7 +62,7 @@ def play(codemaker, codebreaker, quiet=False):
     #import human_codemaker
     #play(human_codemaker, codebreaker1)
     
-print(play(codemaker1, codebreaker1, quiet=False))
+#print(play(codemaker1, codebreaker1, quiet=False))
 
 
 def play_log(codemaker, codebreaker, quiet=False): 
