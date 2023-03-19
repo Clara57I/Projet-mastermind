@@ -33,19 +33,32 @@ def evaluation(solution, combinaison) :
 
 
 from itertools import combinations_with_replacement as cwr
-solutions_possibles = list(cwr(COLORS,4))
+solutions_possibles = set(cwr(COLORS,4))
 #solutions_possibles = [x+y+z+t for x in COLORS for y in COLORS for z in COLORS for t in COLORS]
 
 #print(len((solutions_possibles)))
 #print(evaluation(['B','B','J','O'],solutions_possibles[6]))
 #%%QUESTION 5
-def donner_possibles(combinaison_test, ev):
+
+# A discuter avec Clara : on m'a dit que faire des lectures et écritures
+# provoquent des erreurs difficiles à detecter.
+
+# def donner_possibles(combinaison_test, ev):
+#     global solutions_possibles
+#     for sol in solutions_possibles :  
+#         bp,mp = (evaluation(combinaison_test,sol))       
+#         if (bp,mp) != ev :            
+#             solutions_possibles.remove(sol)
+#     return set(solutions_possibles)
+
+def donner_possibles(combinaison_test, evaluation_test):
+    possibles = set()
     global solutions_possibles
-    for sol in solutions_possibles :  
-        bp,mp = (evaluation(combinaison_test,sol))       
-        if (bp,mp) != ev :            
-            solutions_possibles.remove(sol)
-    return set(solutions_possibles)
+    for sol in solutions_possibles:
+        eval_sol = evaluation(combinaison_test, sol)
+        if eval_sol == evaluation_test:
+            possibles.add(sol)
+    return possibles
 
 #print(donner_possibles('RRRR', (1, 0)))
 #donner_possibles(['B','B','J','O'], (1,2))
@@ -53,8 +66,15 @@ def donner_possibles(combinaison_test, ev):
 #print(donner_possibles(['B','B','J','O'], (1,2)))
 #print(len(donner_possibles(['B','B','J','O'], (1,2))))
 #%%QUESTION 6
-def maj_possibles(solutions_possibles,combinaison_test,ev):    
-    return list(donner_possibles(combinaison_test, ev))
+
+# En conséquence de la modification de *donner_possible**
+# def maj_possibles(solutions_possibles,combinaison_test,ev):    
+#     return list(donner_possibles(combinaison_test, ev))
+
+def maj_possibles(solutions_possibles_avant_essai, combinaison_test, evaluation_test):
+    possibite_apres_essai = donner_possibles(combinaison_test, evaluation_test)
+    solutions_possibles_avant_essai.intersection_update(possibite_apres_essai)
+    return
 
 #print(len(solutions_possibles))
 #maj_possibles(solutions_possibles,['B','B','J','O'],(0,3))
