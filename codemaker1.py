@@ -5,21 +5,18 @@ Created on Sat Jan 21 12:13:06 2023
 @author: clara
 """
 
-import common as com
-
-
 import sys
 import random
-import common  # N'utilisez pas la syntaxe "from common import XXX"
+import common as com # N'utilisez pas la syntaxe "from common import XXX"
 
-
+solution = None # la solution est initialisée par la fonction init
 def init():
     """
     Cette fonction, appellée à chaque début de partie, initialise un certain nombre de
     variables utilisées par le codemaker
     """
     global solution
-    solution = ''.join(random.choices(common.COLORS, k=common.LENGTH))
+    solution = ''.join(random.choices(com.COLORS, k=com.LENGTH))
     return solution
 
 #%%QUESTION 2
@@ -41,7 +38,6 @@ def codemaker(combinaison):
     global solution
     return evaluation_complete(solution, combinaison)
 
-solution = ['B','O','M','G']
 
 #print(codemaker(['B','B','J','O']))
 

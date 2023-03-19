@@ -56,6 +56,7 @@ def esperance (play,codemaker, codebreaker, k):
     plt.ylabel('nb de joueurs gagnant avec ce nombre d essais')
     plt.title('répartition du nombre d essais necessaires')
     plt.legend()
+    plt.show()
     
     for i in range(len(P)):
          E += P[i]*nb_essai[i]
