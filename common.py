@@ -34,7 +34,7 @@ def evaluation(solution, combinaison) :
 
 from itertools import combinations_with_replacement as cwr
 solutions_possibles = set(cwr(COLORS,4))
-#solutions_possibles = [x+y+z+t for x in COLORS for y in COLORS for z in COLORS for t in COLORS]
+#solutions_possibles = set([x+y+z+t for x in COLORS for y in COLORS for z in COLORS for t in COLORS])
 
 #print(len((solutions_possibles)))
 #print(evaluation(['B','B','J','O'],solutions_possibles[6]))
