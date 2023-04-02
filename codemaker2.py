@@ -37,7 +37,7 @@ def codemaker(combinaison):
         
         
 solution = ['B','B','J','O']
-#print(codemaker(['B','B','J','O']))
+print(codemaker(['B','B','J','O']))
             
             
     
